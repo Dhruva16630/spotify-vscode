@@ -12,6 +12,23 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "spotify",
+          "title": "Spotify",
+          "icon": "media/Spotify_Icon_Black.svg"
+        }
+      ]
+    },
+    "views": {
+      "spotify":[
+        {
+          "id": "spotify view",
+          "name": "Spotify Player"
+        }
+      ]
+    },
     "commands": [
       {
         "command": "spotify-vscode.helloWorld",
