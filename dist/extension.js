@@ -42,8 +42,10 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.activate = activate;
 const vscode = __importStar(__webpack_require__(1));
 function activate(context) {
+    console.log("1");
     const provider = new SpotifyViewProvider(context);
     context.subscriptions.push(vscode.window.registerWebviewViewProvider("spotifyView", provider));
+    vscode.commands.executeCommand("workbench.view.extension.spotify");
 }
 class SpotifyViewProvider {
     context;
@@ -54,6 +56,7 @@ class SpotifyViewProvider {
         webviewView.webview.options = {
             enableScripts: true
         };
+        console.log("Loaded");
         webviewView.webview.html = `
       <!DOCTYPE html>
       <html>

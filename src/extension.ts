@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
+  console.log("1");
 
   const provider = new SpotifyViewProvider(context);
 
@@ -10,6 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
       provider
     )
   );
+  vscode.commands.executeCommand("workbench.view.extension.spotify");
+
 }
 
 class SpotifyViewProvider implements vscode.WebviewViewProvider {
@@ -20,6 +23,8 @@ class SpotifyViewProvider implements vscode.WebviewViewProvider {
     webviewView.webview.options = {
       enableScripts: true
     };
+
+	console.log("Loaded");
 
     webviewView.webview.html = `
       <!DOCTYPE html>

@@ -9,7 +9,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onView:spotifyView"],
   "main": "./dist/extension.js",
   "contributes": {
     "viewsContainers": {
@@ -24,8 +24,10 @@
     "views": {
       "spotify":[
         {
-          "id": "spotify view",
-          "name": "Spotify Player"
+          "id": "spotifyView",
+          "name": "Spotify",
+          "type": "webview",
+          "visibility": "visible"
         }
       ]
     },
