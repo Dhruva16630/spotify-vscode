@@ -35,5 +35,16 @@ export class SpotifyViewProvider implements vscode.WebviewViewProvider {
     };
 
     webview.html = await getWebviewContent(this.context, webview);
+
+    webview.onDidReceiveMessage((message)=>{
+      console.log("Message from React:", message);
+
+      if(message.type === "ping"){
+        webview.postMessage({
+          type: "pong",
+          text: "Hello from VS Code Extension Bakend",
+        });
+      }
+    });
   }
 }

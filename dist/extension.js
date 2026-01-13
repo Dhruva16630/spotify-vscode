@@ -67,6 +67,15 @@ class SpotifyViewProvider {
             ],
         };
         webview.html = await (0, getWebviewContent_1.getWebviewContent)(this.context, webview);
+        webview.onDidReceiveMessage((message) => {
+            console.log("Message from React:", message);
+            if (message.type === "ping") {
+                webview.postMessage({
+                    type: "pong",
+                    text: "Hello from VS Code Extension Bakend",
+                });
+            }
+        });
     }
 }
 exports.SpotifyViewProvider = SpotifyViewProvider;
