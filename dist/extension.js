@@ -5,7 +5,6 @@
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
-// import * as vscode from 'vscode';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -42,58 +41,6 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SpotifyViewProvider = void 0;
 exports.activate = activate;
-// export function activate(context: vscode.ExtensionContext) {
-//   console.log("1");
-//   const provider = new SpotifyViewProvider(context);
-//   context.subscriptions.push(
-//     vscode.window.registerWebviewViewProvider(
-//       "spotifyView",
-//       provider
-//     )
-//   );
-//   vscode.commands.executeCommand("workbench.view.extension.spotify");
-// }
-// class SpotifyViewProvider implements vscode.WebviewViewProvider {
-//   constructor(private context: vscode.ExtensionContext) {}
-//   resolveWebviewView(webviewView: vscode.WebviewView) {
-//     webviewView.webview.options = {
-//       enableScripts: true
-//     };
-// 	console.log("Loaded");
-//     webviewView.webview.html = `
-//       <!DOCTYPE html>
-//       <html>
-//         <body style="background:#121212;color:white;">
-//           <h2>🎵 Spotify Sidebar Loaded</h2>
-//           <p>Your VS Code Spotify extension is working.</p>
-//         </body>
-//       </html>
-//     `;
-//   }
-// }
-// import * as vscode from "vscode";
-// import * as path from "node:path";
-// import { getWebviewContent } from "./getWebviewContent";
-// export function activate(context: vscode.ExtensionContext) {
-//   const disposable = vscode.commands.registerCommand(
-//     "spotify-vscode.helloWorld",
-//     async () => {
-//       const panel = vscode.window.createWebviewPanel(
-//         "reactWebview",
-//         "React Webview",
-//         vscode.ViewColumn.One,
-//         {
-//           enableScripts: true,
-//           localResourceRoots: [
-//             vscode.Uri.file(path.join(context.extensionPath, "webview", "dist"))
-//           ]
-//         }
-//       );
-//       panel.webview.html = await getWebviewContent(context, panel.webview);
-//     }
-//   );
-//   context.subscriptions.push(disposable);
-// }
 const vscode = __importStar(__webpack_require__(1));
 const getWebviewContent_1 = __webpack_require__(2);
 function activate(context) {
